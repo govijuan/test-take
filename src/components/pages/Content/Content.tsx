@@ -15,7 +15,7 @@ const Content = () => (
             <Route path="/chatbot/:chatbotId">
                 <Chatbot />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
                 <MyChatbots />
             </Route>
             <Route path="*">
