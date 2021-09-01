@@ -4,7 +4,10 @@ import StyledMyChatbots from './MyChatbots.styles';
 const MyChatbots = () => {
     return (
         <StyledMyChatbots>
-            <h1>My Chatbots</h1>
+            <div>
+                <h1>My Chatbots</h1>
+            </div>
+            
         </StyledMyChatbots>
     )
 }
