@@ -1,6 +1,6 @@
 import React from 'react';
 import StyledMyChatbots, {ChatbotsHeader} from './MyChatbots.styles';
-import Container from '../../atoms/Container/Container';
+import { Container } from 'react-bootstrap'
 import PageTitle from '../../atoms/PageTitle/PageTitle';
 
 import SortForm from '../../molecules/SortForm/SortForm';
