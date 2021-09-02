@@ -1,17 +1,20 @@
 import React from 'react';
 import StyledMyChatbots, {ChatbotsHeader} from './MyChatbots.styles';
 import Container from '../../atoms/Container/Container';
+import PageTitle from '../../atoms/PageTitle/PageTitle';
 
 import SortForm from '../../molecules/SortForm/SortForm';
+import Cards from '../../organisms/Cards/Cards';
 
 const MyChatbots = () => {
     return (
         <StyledMyChatbots>
             <Container>
                 <ChatbotsHeader>
-                    <h1>My Chatbots</h1>
+                    <PageTitle>My Chatbots</PageTitle>
                     <SortForm />
                 </ChatbotsHeader>
+                <Cards></Cards>
             </Container>
         </StyledMyChatbots>
     )
