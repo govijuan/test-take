@@ -11,10 +11,19 @@ const Cards = (props: CardsProps) => {
             </CardsRow>
             <FavWrap>
                 <BotCard favorite={true} name='Bot name' shortName='Builder'/>
+                <BotCard favorite={true} name='Bot name' shortName='Builder'/>
+                <BotCard favorite={true} name='Bot name' shortName='Builder'/>
+                <BotCard favorite={true} name='Bot name' shortName='Builder'/>
+                <BotCard favorite={true} name='Bot name' shortName='Builder'/>
+                <BotCard favorite={true} name='Bot name' shortName='Builder'/>
             </FavWrap>
             <CardsWrap>
                 <BotCard favorite={false} name='Bot name' shortName='Builder'/>
-                
+                <BotCard favorite={false} name='Bot name' shortName='Builder'/>
+                <BotCard favorite={false} name='Bot name' shortName='Builder'/>
+                <BotCard favorite={false} name='Bot name' shortName='Builder'/>
+                <BotCard favorite={false} name='Bot name' shortName='Builder'/>
+                <BotCard favorite={false} name='Bot name' shortName='Builder'/>
             </CardsWrap>
         </CardsStyles>
             

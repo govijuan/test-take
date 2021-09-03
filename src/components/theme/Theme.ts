@@ -6,5 +6,5 @@ export const Theme = {
     txtLightColor: "#607B99",
     headerHeight: "30px",
     linesColor: "#D2DFE6",
-    cardsRowPadding: "40px",
+    cardsRowPadding: "30px",
 }

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Card from '../../atoms/Card/Card'
 
 const StyledBCard = styled(Card)`
-
+    margin: 10px 0;
 `
 
 export const BotName = styled.h5`
