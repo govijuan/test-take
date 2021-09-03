@@ -1,14 +1,23 @@
 import React from "react"
-import CardStyles from "./Cards.styles"
+import CardsStyles, { CardsRow, CardsWrap, FavWrap, FavTitle  } from "./Cards.styles"
 import BotCard from "../../molecules/BotCard/BotCard"
 
 const Cards = (props: CardsProps) => {
     const { botsList } = props
     return (
-        <CardStyles>
-            <BotCard favorite={false} name='Bot name' shortName='Builder'/>
-            <BotCard favorite={true} name='Bot name' shortName='Builder'/>
-        </CardStyles>
+        <CardsStyles>
+            <CardsRow>
+                <FavTitle>Favorites</FavTitle>
+            </CardsRow>
+            <FavWrap>
+                <BotCard favorite={true} name='Bot name' shortName='Builder'/>
+            </FavWrap>
+            <CardsWrap>
+                <BotCard favorite={false} name='Bot name' shortName='Builder'/>
+                
+            </CardsWrap>
+        </CardsStyles>
+            
     )
 }
 

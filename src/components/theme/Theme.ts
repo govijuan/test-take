@@ -5,5 +5,6 @@ export const Theme = {
     BoxBoderRadius: "6px",
     txtLightColor: "#607B99",
     headerHeight: "30px",
-    linesColor: "#D2DFE6"
+    linesColor: "#D2DFE6",
+    cardsRowPadding: "40px",
 }
