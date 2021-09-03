@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 const StyledInput = styled.input`
-    border: 1px solid #D2DFE6;
+    border: 1px solid ${props => props.theme.linesColor};
     height: 40px;
-    border-radius: 6px;
+    border-radius: ${props => props.theme.BoxBoderRadius};
     padding: 0 10px;
     margin: 0 5px;
     width: 200px;

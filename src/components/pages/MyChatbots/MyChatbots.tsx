@@ -14,7 +14,7 @@ const MyChatbots = () => {
                     <PageTitle>My Chatbots</PageTitle>
                     <SortForm />
                 </ChatbotsHeader>
-                <Cards></Cards>
+                <Cards botsList={[]}/>
             </Container>
         </StyledMyChatbots>
     )

@@ -1,14 +1,17 @@
 import React from 'react'
-import StyledCard from './Card.styles'
+import StyledCard, { StyledBox }from './Card.styles'
 
 const Card = (props: CardProps) => (
     <StyledCard {...props}>
-        {props.children}
+        <StyledBox>
+            {props.children}
+        </StyledBox>   
     </StyledCard>
 )
 
 type CardProps = {
-    children: React.ReactNode
+    children: React.ReactNode,
+    className: string
 }
 
 export default Card

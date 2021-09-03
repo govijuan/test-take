@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 const StyledButton = styled.button`
-    background-color: #2CC3D5;
+    background-color: ${props => props.theme.highlightColor};
     color: #fff;
     height: 39px;
-    border-radius: 6px;
+    border-radius: ${props => props.theme.BoxBoderRadius};
     border:none;
     padding: 0 15px;
     margin: 0 5px;

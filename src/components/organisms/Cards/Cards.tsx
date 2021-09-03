@@ -1,17 +1,33 @@
-import React from "react";
-import { CardStyles } from "./Cards.styles";
-import Card from "../../atoms/Card/Card";
+import React from "react"
+import CardStyles from "./Cards.styles"
+import BotCard from "../../molecules/BotCard/BotCard"
 
-const Cards = () => {
+const Cards = (props: CardsProps) => {
+    const { botsList } = props
     return (
         <CardStyles>
-            <Card>
-                This is a Card
-                Bla Bla Bla Bla
-                Bla Bla Bla Bla
-            </Card>
+            <BotCard favorite={false} name='Bot name' shortName='Builder'/>
+            <BotCard favorite={true} name='Bot name' shortName='Builder'/>
         </CardStyles>
     )
+}
+
+interface Bot {
+    shortName : string,
+    name: string,
+    description: string,
+    image: string,
+    template: string,
+    created: string,
+    updated: string,
+    plan: string,
+    culture: string,
+    analytics: {},
+    message: {},
+}
+
+interface CardsProps{
+    botsList: Bot[],
 }
 
 export default Cards
