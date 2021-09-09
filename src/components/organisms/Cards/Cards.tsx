@@ -20,7 +20,8 @@ const Cards = () => {
                         key={item.shortName} 
                         favorite={item.favorite} 
                         name={item.name} 
-                        shortName={item.shortName} 
+                        shortName={item.shortName}
+                        image={item.image}
                     />
                 ))}
             </FavWrap>
@@ -31,6 +32,7 @@ const Cards = () => {
                         favorite={item.favorite}
                         name={item.name}
                         shortName={item.shortName}
+                        image={item.image}
                     />
                 ))}
             </CardsWrap>

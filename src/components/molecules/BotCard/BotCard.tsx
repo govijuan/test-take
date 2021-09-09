@@ -6,14 +6,14 @@ import BotImage from '../../atoms/BotImage/BotImage'
 import TestImage from '../../../resources/images/test-image.jpeg'
 
 const BotCard = (props: any) => {
-    const { favorite, name, shortName } = props
+    const { favorite, name, shortName, image } = props
     return (
         <StyledBCard className='col-sm-4 col-md-3 col-lg-2'>
             <Row>
                 <FavoriteStar favorite={favorite} className='float-left' shortName={shortName} />
             </Row>
             <Row className='justify-content-center'>
-                <BotImage imageSrc={TestImage} />
+                <BotImage imageSrc={image} />
             </Row>
             <Row>
                 <BotName>{name}</BotName>
