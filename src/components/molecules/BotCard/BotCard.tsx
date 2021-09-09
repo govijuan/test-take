@@ -5,12 +5,12 @@ import FavoriteStar from '../../atoms/FavoriteStar/FavoriteStar'
 import BotImage from '../../atoms/BotImage/BotImage'
 import TestImage from '../../../resources/images/test-image.jpeg'
 
-const BotCard = (props: BotCardProps) => {
+const BotCard = (props: any) => {
     const { favorite, name, shortName } = props
     return (
         <StyledBCard className='col-sm-4 col-md-3 col-lg-2'>
             <Row>
-                <FavoriteStar favorite={favorite} className='float-left'/>
+                <FavoriteStar favorite={favorite} className='float-left' shortName={shortName} />
             </Row>
             <Row className='justify-content-center'>
                 <BotImage imageSrc={TestImage} />
@@ -23,12 +23,6 @@ const BotCard = (props: BotCardProps) => {
             </Row>
         </StyledBCard>
     )
-}
-
-type BotCardProps = {
-    favorite: boolean,
-    name: string,
-    shortName: string,
 }
 
 export default BotCard

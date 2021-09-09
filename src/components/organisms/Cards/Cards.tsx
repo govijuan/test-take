@@ -1,51 +1,42 @@
-import React from "react"
-import CardsStyles, { CardsRow, CardsWrap, FavWrap, FavTitle  } from "./Cards.styles"
-import BotCard from "../../molecules/BotCard/BotCard"
+import React, {useContext} from 'react'
+import { DataContext } from '../../../data/dataContext'
+import CardsStyles, { CardsRow, CardsWrap, FavWrap, FavTitle  } from './Cards.styles'
+import BotCard from '../../molecules/BotCard/BotCard'
 
-const Cards = (props: CardsProps) => {
-    const { botsList } = props
+const Cards = () => {
+    
+    const {state, } = useContext(DataContext)
+    const faveBotsList = state.filter( item => item.favorite === true)
+    const unfaveBotsList = state.filter( item => item.favorite === false )
+
     return (
         <CardsStyles>
             <CardsRow>
                 <FavTitle>Favorites</FavTitle>
             </CardsRow>
             <FavWrap>
-                <BotCard favorite={true} name='Bot name' shortName='Builder'/>
-                <BotCard favorite={true} name='Bot name' shortName='Builder'/>
-                <BotCard favorite={true} name='Bot name' shortName='Builder'/>
-                <BotCard favorite={true} name='Bot name' shortName='Builder'/>
-                <BotCard favorite={true} name='Bot name' shortName='Builder'/>
-                <BotCard favorite={true} name='Bot name' shortName='Builder'/>
+                {faveBotsList.map((item) => (
+                    <BotCard 
+                        key={item.shortName} 
+                        favorite={item.favorite} 
+                        name={item.name} 
+                        shortName={item.shortName} 
+                    />
+                ))}
             </FavWrap>
             <CardsWrap>
-                <BotCard favorite={false} name='Bot name' shortName='Builder'/>
-                <BotCard favorite={false} name='Bot name' shortName='Builder'/>
-                <BotCard favorite={false} name='Bot name' shortName='Builder'/>
-                <BotCard favorite={false} name='Bot name' shortName='Builder'/>
-                <BotCard favorite={false} name='Bot name' shortName='Builder'/>
-                <BotCard favorite={false} name='Bot name' shortName='Builder'/>
+                {unfaveBotsList.map((item) => (
+                    <BotCard 
+                        key={item.shortName}
+                        favorite={item.favorite}
+                        name={item.name}
+                        shortName={item.shortName}
+                    />
+                ))}
             </CardsWrap>
         </CardsStyles>
             
     )
-}
-
-interface Bot {
-    shortName : string,
-    name: string,
-    description: string,
-    image: string,
-    template: string,
-    created: string,
-    updated: string,
-    plan: string,
-    culture: string,
-    analytics: {},
-    message: {},
-}
-
-interface CardsProps{
-    botsList: Bot[],
 }
 
 export default Cards
