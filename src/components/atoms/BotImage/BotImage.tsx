@@ -4,14 +4,15 @@ import ImageCrop, { StyledBImage } from './BotImage.styles'
 const BotImage = (props: BotImageProps) => {
     const { imageSrc } = props
     return (
-        <ImageCrop>
+        <ImageCrop {...props}>
             <StyledBImage src={imageSrc} />
         </ImageCrop>
     )
 }
 
 type BotImageProps = {
-    imageSrc: string
+    imageSrc: string,
+    className?: string
 }
 
 export default BotImage

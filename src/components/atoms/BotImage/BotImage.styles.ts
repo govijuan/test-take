@@ -11,6 +11,10 @@ const ImageCrop = styled.div`
     border-radius: 100%;
     overflow: hidden;
     padding: 0;
+    &&.small-img{
+        width: 30px;
+        height: 30px;
+    }
 `
 
 export default ImageCrop

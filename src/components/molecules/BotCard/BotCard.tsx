@@ -3,7 +3,6 @@ import { Row } from 'react-bootstrap'
 import StyledBCard, { BotName, BotShortName } from './BotCard.styles'
 import FavoriteStar from '../../atoms/FavoriteStar/FavoriteStar'
 import BotImage from '../../atoms/BotImage/BotImage'
-import TestImage from '../../../resources/images/test-image.jpeg'
 
 const BotCard = (props: any) => {
     const { favorite, name, shortName, image } = props

@@ -10,7 +10,7 @@ import List from '../../organisms/List/List'
 const MyChatbots = () => {
     const {state, } = useContext(DataContext)
     const { botsList, showList } = state
-    const botListComponent = showList ? <List /> : <Cards  botsList={botsList} />
+    const botListComponent = showList ? <List botsList={botsList} /> : <Cards  botsList={botsList} />
 
     return (
         <StyledMyChatbots>
