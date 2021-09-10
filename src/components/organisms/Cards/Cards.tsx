@@ -6,8 +6,9 @@ import BotCard from '../../molecules/BotCard/BotCard'
 const Cards = () => {
     
     const {state, } = useContext(DataContext)
-    const faveBotsList = state.filter( item => item.favorite === true)
-    const unfaveBotsList = state.filter( item => item.favorite === false )
+    const { botsList } = state
+    const faveBotsList = botsList.filter( item => item.favorite === true)
+    const unfaveBotsList = botsList.filter( item => item.favorite === false )
 
     return (
         <CardsStyles>

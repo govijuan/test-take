@@ -22,7 +22,7 @@ function createDataCtx<StateType, ActionType>(
     return [ctx, Provider] as const
 }
 
-export const initialState = [...rawData]
+export const initialState = { botsList: [...rawData], showList: false }
 type AppState = typeof initialState
 type Action = 
     | { type: 'favorite', shortName: string }
@@ -31,15 +31,17 @@ type Action =
 function reducer(state: AppState, action: Action): AppState {
     switch(action.type){
         case 'favorite':
-            return state.map( (item: Bot) => item.shortName === action.shortName // will have to map the elements with the index when using it so we van pass the index
-                ? {...item, favorite: true}
-                : item
-            )
+            return {...state, 
+                    botsList: state.botsList.map( (item: Bot) => item.shortName === action.shortName // will have to map the elements with the index when using it so we van pass the index
+                                ? {...item, favorite: true}
+                                : item
+                    )}
         case 'unFavorite':
-            return state.map( (item: Bot) => item.shortName === action.shortName // will have to map the elements with the index when using it so we van pass the index
-                ? {...item, favorite: false}
-                : item
-            )
+            return {...state,
+                    botsList: state.botsList.map( (item: Bot) => item.shortName === action.shortName // will have to map the elements with the index when using it so we van pass the index
+                                ? {...item, favorite: false}
+                                : item
+                    )}
         default:
             return state
     }
