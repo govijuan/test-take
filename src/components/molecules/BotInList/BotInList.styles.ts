@@ -5,7 +5,7 @@ import Card from '../../atoms/Card/Card'
 const StyledListBot = styled(Row)`
     flex-direction: row;
     justify-content: center;
-    height: 40px;
+    height: 60px;
     padding: 0;
     margin: 5px 0;
 `
@@ -19,6 +19,7 @@ export const StarContainer = styled.div`
 
 export const BotName = styled.h5`
     color: ${props => props.theme.darkTextColor};
+    font-size: 1rem;
     margin: 0;
     flex: 1;
     text-align: left;
@@ -26,7 +27,9 @@ export const BotName = styled.h5`
 `
 export const ListCard = styled(Card)`
     flex: 1;
+    height: 100%;
     &&>div{
+        height: 100%;
         padding: 5px 15px;
         display: flex;
         flex-direction: row;
