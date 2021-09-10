@@ -4,7 +4,7 @@ import { ListStyles } from "./List.styles";
 const List = () => {
     return (
         <ListStyles>
-            
+            Este é o componente List
         </ListStyles>
     )
 }

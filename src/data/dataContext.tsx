@@ -27,6 +27,8 @@ type AppState = typeof initialState
 type Action = 
     | { type: 'favorite', shortName: string }
     | { type: 'unFavorite', shortName: string }
+    | { type: 'showList' }
+    | { type: 'showCards' }
 
 function reducer(state: AppState, action: Action): AppState {
     switch(action.type){
@@ -42,6 +44,10 @@ function reducer(state: AppState, action: Action): AppState {
                                 ? {...item, favorite: false}
                                 : item
                     )}
+        case 'showList':
+            return {...state, showList: true}
+        case 'showCards':
+            return {...state, showList: false}
         default:
             return state
     }
