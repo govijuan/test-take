@@ -1,15 +1,12 @@
-import React, {useContext} from 'react'
-import { DataContext } from '../../../data/dataContext'
+import React from 'react'
 import CardsStyles, { CardsRow, CardsWrap, FavWrap, FavTitle  } from './Cards.styles'
 import BotCard from '../../molecules/BotCard/BotCard'
+import { Bot } from '../../../types/BotListTypes'
 
-const Cards = () => {
-    
-    const {state, } = useContext(DataContext)
-    const { botsList } = state
-    const faveBotsList = botsList.filter( item => item.favorite === true)
-    const unfaveBotsList = botsList.filter( item => item.favorite === false )
-
+const Cards = (props: any) => {
+    const { botsList } = props
+    const faveBotsList: Bot[] = botsList.filter( (item: Bot) => item.favorite === true)
+    const unfaveBotsList: Bot[] = botsList.filter( (item: Bot) => item.favorite === false )
     return (
         <CardsStyles>
             <CardsRow>

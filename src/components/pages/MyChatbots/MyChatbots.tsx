@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import StyledMyChatbots, {ChatbotsHeader} from './MyChatbots.styles'
+import { DataContext } from '../../../data/dataContext'
 import { Container } from 'react-bootstrap'
 import PageTitle from '../../atoms/PageTitle/PageTitle'
 import SortForm from '../../molecules/SortForm/SortForm'
@@ -7,12 +8,9 @@ import Cards from '../../organisms/Cards/Cards'
 import List from '../../organisms/List/List'
 
 const MyChatbots = () => {
-    const [showList, setShowList] = useState(false)
-    const botListComponent = showList ? <List /> : <Cards />
-    const toggleShowList = () => {
-        const newShowListValue = showList === true ? false : true
-        setShowList(newShowListValue)
-    }
+    const {state, } = useContext(DataContext)
+    const { botsList, showList } = state
+    const botListComponent = showList ? <List /> : <Cards  botsList={botsList} />
 
     return (
         <StyledMyChatbots>
