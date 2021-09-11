@@ -8,6 +8,10 @@ const StyledListBot = styled(Row)`
     height: 60px;
     padding: 0;
     margin: 5px 0;
+    a.list-bot-link{
+        flex: 1;
+        text-decoration: none;
+    }
 `
 
 export const StarContainer = styled.div`
@@ -26,7 +30,6 @@ export const BotName = styled.h5`
     padding-left: 10px;
 `
 export const ListCard = styled(Card)`
-    flex: 1;
     height: 100%;
     &&>div{
         height: 100%;
