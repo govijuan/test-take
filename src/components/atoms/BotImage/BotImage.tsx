@@ -11,7 +11,7 @@ const BotImage = (props: BotImageProps) => {
 }
 
 type BotImageProps = {
-    imageSrc: string,
+    imageSrc: string | undefined,
     className?: string
 }
 
