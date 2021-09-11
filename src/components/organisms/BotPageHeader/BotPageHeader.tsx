@@ -5,7 +5,7 @@ import { formatedDate } from '../../../helpers/dateHelpers'
 
 const BotPageHeader = (props:BotHeaderProps) => {
     const {image, name, shortName, created} = props
-    const formatedCreated = formatedDate(created)
+    const formatedCreated = created !== undefined ?  formatedDate(created) : ''
     return (
         <StyledBHeader>
             <HLeftDiv>

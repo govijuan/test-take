@@ -1,4 +1,4 @@
-export const formatedDate = (date:string) => {
+export const formatedDate = (date: string) => {
     const d = new Date(date)
     const year = d.getFullYear().toString()
     let month = (d.getMonth() + 1).toString()
