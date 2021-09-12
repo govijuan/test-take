@@ -1,6 +1,7 @@
 import React from 'react'
 import StyledBContent, {LeftContent, RightContent} from './BotPageContent.styles'
 import BotMainContent from '../../molecules/BotMainContent/BotMainContent'
+import BotPlanContent from '../../molecules/BotPlanContent/BotPlanContent'
 
 const BotPageContent = (props: BotPContentType) => {
     const { culture, activeUsers, recievedMessages, sentMessages, plan} = props
@@ -10,7 +11,7 @@ const BotPageContent = (props: BotPContentType) => {
                 <BotMainContent culture={culture} activeUsers={activeUsers} recievedMessages={recievedMessages} sentMessages={sentMessages}/>
             </LeftContent>
             <RightContent className='col-md-3'>
-                Right content here
+                <BotPlanContent plan={plan}/>
             </RightContent>
         </StyledBContent>
     )
