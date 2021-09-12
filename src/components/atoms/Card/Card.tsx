@@ -11,7 +11,7 @@ const Card = (props: CardProps) => (
 
 type CardProps = {
     children: React.ReactNode,
-    className: string
+    className?: string
 }
 
 export default Card

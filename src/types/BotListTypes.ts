@@ -8,6 +8,16 @@ export interface Bot {
     updated: string,
     plan: string,
     culture: string,
-    analytics: {},
+    analytics: {
+        user: {
+            total: number,
+            actived: number,
+        },
+        message: {
+            received: number,
+            sent: number,
+        },
+    },
+    
     favorite?: boolean
 }
