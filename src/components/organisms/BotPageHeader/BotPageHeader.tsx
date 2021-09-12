@@ -23,10 +23,10 @@ const BotPageHeader = (props:BotHeaderProps) => {
 }
 
 interface BotHeaderProps{
-    image?: string | undefined,
-    name?: string | undefined,
-    shortName?: string | undefined,
-    created?: string | undefined,
+    image: string | undefined,
+    name: string | undefined,
+    shortName: string | undefined,
+    created: string | undefined,
 }
 
 export default BotPageHeader

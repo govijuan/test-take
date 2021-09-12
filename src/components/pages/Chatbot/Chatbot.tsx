@@ -10,10 +10,8 @@ import BotPageFooter from '../../molecules/BotPageFooter/BotPageFooter';
 const Chatbot = () => {
     const {state} = useContext(DataContext)
     const { chatbotId } = useParams<{chatbotId: string}>()
-
-    const itemObj = {...state.botsList.find( item => item.shortName = chatbotId)}
-    const {shortName, name, image, created, plan, culture, analytics } = itemObj
-    console.log('itemObj: ', itemObj)
+    const itemObj = {...state.botsList.find( item => item.shortName === chatbotId)}
+    const { name, shortName, image, created, plan, culture, analytics } = itemObj
     return (
         <StyledChatbot>
             <Container>
