@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Row } from 'react-bootstrap'
 
 const StyledBContent = styled(Row)`
-    padding: 15px 0 60px; 
+    padding: 30px 0 60px; 
 `
 
 export const LeftContent = styled.div`
