@@ -3,6 +3,20 @@ import Card from '../../atoms/Card/Card'
 
 const StyledBCard = styled(Card)`
     margin: 10px 0;
+    a{
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        img{
+
+        }
+        &:hover, :active{
+            h5{
+                color: ${ props => props.theme.highlightColor }
+            }
+            
+        }
+    }
 `
 
 export const BotName = styled.h5`
