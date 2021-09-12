@@ -3,9 +3,15 @@ import styled from 'styled-components'
 const BotPlanContentStyles = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 100%;
+    align-items: center;
     padding: 0 15px;
+    @media (max-width: 976px){
+        justify-content: flex-start;
+    }
+    @media (min-width: 977px){
+        justify-content: space-evenly;
+        height: 100%;
+    }
     &>div{
         display: flex;
         flex-direction: column;
@@ -13,7 +19,8 @@ const BotPlanContentStyles = styled.div`
 `
 
 export const PlanImage = styled.img`
-
+    width: 100%;
+    max-width: 244px;
 `
 
 export const PlanLabel = styled.span`
