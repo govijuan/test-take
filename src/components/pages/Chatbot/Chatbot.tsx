@@ -5,6 +5,7 @@ import StyledChatbot from './Chatbot.styles';
 import { Container } from 'react-bootstrap';
 import BotPageHeader from '../../organisms/BotPageHeader/BotPageHeader';
 import BotPageContent from '../../organisms/BotPageContent/BotPageContent';
+import BotPageFooter from '../../molecules/BotPageFooter/BotPageFooter';
 
 const Chatbot = () => {
     const {state} = useContext(DataContext)
@@ -24,7 +25,9 @@ const Chatbot = () => {
                     sentMessages={analytics?.message.sent}
                     plan={plan}
                 />
+                <BotPageFooter />
             </Container>
+
         </StyledChatbot>
     )
 }
