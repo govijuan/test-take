@@ -7,10 +7,10 @@ const BotPageContent = (props: BotPContentType) => {
     const { culture, activeUsers, recievedMessages, sentMessages, plan} = props
     return (
         <StyledBContent>
-            <LeftContent xs={12} sm={12} md={8} lg={9}>
+            <LeftContent xs={{span: 12, order: 2}} sm={12} md={{span: 8, order: 1}} lg={9}>
                 <BotMainContent culture={culture} activeUsers={activeUsers} recievedMessages={recievedMessages} sentMessages={sentMessages}/>
             </LeftContent>
-            <RightContent xs={12} sm={12} md={4} lg={3}>
+            <RightContent xs={{span: 12, order: 1}} sm={12} md={{span: 4, order: 2}} lg={3}>
                 <BotPlanContent plan={plan}/>
             </RightContent>
         </StyledBContent>

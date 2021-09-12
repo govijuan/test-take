@@ -7,6 +7,7 @@ const BotPlanContentStyles = styled.div`
     padding: 0 15px;
     @media (max-width: 976px){
         justify-content: flex-start;
+        margin: 0 0 30px;
     }
     @media (min-width: 977px){
         justify-content: space-evenly;
