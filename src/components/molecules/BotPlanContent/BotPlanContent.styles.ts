@@ -5,6 +5,7 @@ const BotPlanContentStyles = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     height: 100%;
+    padding: 0 15px;
     &>div{
         display: flex;
         flex-direction: column;

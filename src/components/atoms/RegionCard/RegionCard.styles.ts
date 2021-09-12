@@ -23,7 +23,7 @@ const RegionCardStyles = styled(Card)`
         
     }
     @media (min-width: 1385px){
-        grid-column: 1 / 4;
+        grid-column: 1 / 5;
         
     }
 `

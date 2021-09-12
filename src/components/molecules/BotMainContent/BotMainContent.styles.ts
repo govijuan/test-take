@@ -26,7 +26,7 @@ export const AUDataCard = styled(BotPageDCard)`
         grid-row: row-start / 2;
     }
     @media (min-width: 1385px){
-        grid-column: 4 / 12;
+        grid-column: 5 / 13;
     }
 `
 
@@ -40,7 +40,7 @@ export const RMesssagesCard = styled(BotPageDCard)`
         grid-row: 2 / row-end;
     }
     @media (min-width: 1385px){
-        grid-column: 1 / 7;
+        grid-column: 1 / 8;
     }
     
     
@@ -55,7 +55,7 @@ export const SMessagesCard = styled(BotPageDCard)`
         grid-row: 2 / row-end;
     }
     @media (min-width: 1385px){
-        grid-column: 7 / 12;
+        grid-column: 8 / 13;
     }
 
 `
