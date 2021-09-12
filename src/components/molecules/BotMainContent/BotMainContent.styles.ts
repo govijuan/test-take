@@ -6,22 +6,22 @@ const BotMainContentStyles = styled.div`
     grid-template-columns: repeat(12, 1fr);
     column-gap: 30px;
     row-gap: 30px;
-    @media (max-width: 767px){
+    @media (max-width: 976px){
         grid-template-rows: repeat(4, 1fr);
     }
-    @media (min-width: 768px){
+    @media (min-width: 977px){
         grid-template-rows: [row-start] repeat(2, 1fr) [row-end];
     }
-    @media (min-width: 768px) and (max-width: 1384px){
+    @media (min-width: 977px) and (max-width: 1384px){
         grid-template-columns: repeat(2, 1fr)
     }
 `
 export const AUDataCard = styled(BotPageDCard)`
-    @media (max-width: 767px){
-        grid-column: 1 / 12;
+    @media (max-width: 976px){
+        grid-column: 1 / 13;
         grid-row: 2 / 3
     }
-    @media (min-width: 768px){
+    @media (min-width: 977px){
         grid-column: 2 / 3;
         grid-row: row-start / 2;
     }
@@ -31,11 +31,11 @@ export const AUDataCard = styled(BotPageDCard)`
 `
 
 export const RMesssagesCard = styled(BotPageDCard)`
-    @media (max-width: 767px){
-        grid-column: 1 / 12;
+    @media (max-width: 976px){
+        grid-column: 1 / 13;
         grid-row: 3 / 4
     }
-    @media (min-width: 768px){
+    @media (min-width: 977px){
         grid-column: 1 / 2;
         grid-row: 2 / row-end;
     }
@@ -46,11 +46,11 @@ export const RMesssagesCard = styled(BotPageDCard)`
     
 `
 export const SMessagesCard = styled(BotPageDCard)`
-    @media (max-width: 767px){
-        grid-column: 1 / 12;
+    @media (max-width: 976px){
+        grid-column: 1 / 13;
         grid-row: 4 / -1;
     }
-    @media (min-width: 768px){
+    @media (min-width: 977px){
         grid-column: 2 / 3;
         grid-row: 2 / row-end;
     }
