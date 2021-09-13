@@ -19,7 +19,6 @@ const SortForm = (props: SortFormProps) => {
 
     const onSearch = (e:ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value
-        console.log('OnChange acionado!!')
         dispatch({type: 'searchFor', searchTermStr: value })
     }
 

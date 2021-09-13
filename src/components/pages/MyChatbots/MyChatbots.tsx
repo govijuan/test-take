@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import StyledMyChatbots, {ChatbotsHeader} from './MyChatbots.styles'
 import { DataContext } from '../../../data/dataContext'
-import { orderBotsListBy } from '../../../helpers/filterHelpers'
+import { orderBotsListBy, filterBySearchTerm } from '../../../helpers/filterHelpers'
 import { Container } from 'react-bootstrap'
 import PageTitle from '../../atoms/PageTitle/PageTitle'
 import SortForm from '../../molecules/SortForm/SortForm'
@@ -17,33 +17,24 @@ const MyChatbots = () => {
     })
 
     useEffect(() => {
-        setBotsLists({
-            faveBotsList: botsList.filter((item) => item.favorite === true),
-            unfaveBotsList: botsList.filter((item) => item.favorite === false)
-        })
-    }, [botsList])
-
-    const setOrderedArrays = () => {
-        const orderedFBotsList = orderBotsListBy(botsLists.faveBotsList, orderBy)
-        const orderedUnFBotsList = orderBotsListBy(botsLists.unfaveBotsList, orderBy)
-        setBotsLists({
-            faveBotsList: orderedFBotsList,
-            unfaveBotsList: orderedUnFBotsList
-        })
-    }
-
-    useEffect(()=>{
-        if(orderBy !== ''){
-            return setOrderedArrays()
-        }
+        let newFaveBotsList = botsList.filter((item) => item.favorite === true)
+        let newUnfaveBotsList = botsList.filter((item) => item.favorite === false)
         
-    }, [orderBy])
-
-    useEffect(() => {
-        if(searchTerm){
-            console.log('dispara o search')
+        if(orderBy !== ''){
+            newFaveBotsList = orderBotsListBy(newFaveBotsList, orderBy)
+            newUnfaveBotsList = orderBotsListBy(newUnfaveBotsList, orderBy)
         }
-    }, [searchTerm])
+    
+        if(searchTerm !== ''){
+            newFaveBotsList = filterBySearchTerm(searchTerm, newFaveBotsList)
+            newUnfaveBotsList = filterBySearchTerm(searchTerm, newUnfaveBotsList)
+        }
+
+        setBotsLists({
+            faveBotsList: newFaveBotsList ,
+            unfaveBotsList: newUnfaveBotsList
+        })
+    }, [botsList, orderBy, searchTerm])
 
     const botListComponent = showList ? <List faveBotsList={botsLists.faveBotsList}  unfaveBotsList={botsLists.unfaveBotsList} /> : <Cards  faveBotsList={botsLists.faveBotsList} unfaveBotsList={botsLists.unfaveBotsList} />
 
