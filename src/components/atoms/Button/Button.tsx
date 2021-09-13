@@ -1,12 +1,9 @@
 import React from 'react'
 import StyledButton from './Button.styles'
 
-const Button = (props: ButtonProps) => (
-    <StyledButton {...props} >{props.children}</StyledButton>
+const Button = (props: any) => (
+    <StyledButton onClick={props.onClick} >{props.children}</StyledButton>
 )
 
-type ButtonProps = {
-    children: React.ReactNode
-}
 
 export default Button

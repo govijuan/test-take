@@ -3,10 +3,10 @@ import { ListStyles, ListWrap, FavWrap, CardsRow, FavTitle } from "./List.styles
 import BotInList from "../../molecules/BotInList/BotInList";
 import { Bot } from "../../../types/BotListTypes";
 
-const List = (props: any) => {
-    const { botsList } = props
-    const faveBotsList: Bot[] = botsList.filter( (item: Bot) => item.favorite === true)
-    const unfaveBotsList: Bot[] = botsList.filter( (item: Bot) => item.favorite === false )
+const List = (props: ListTypes) => {
+    const { unfaveBotsList, faveBotsList } = props
+    
+
     return (
         <ListStyles>
             <CardsRow>
@@ -38,6 +38,11 @@ const List = (props: any) => {
             </ListWrap>
         </ListStyles>
     )
+}
+
+interface ListTypes {
+    faveBotsList: Bot[],
+    unfaveBotsList: Bot[],
 }
 
 export default List

@@ -22,13 +22,16 @@ function createDataCtx<StateType, ActionType>(
     return [ctx, Provider] as const
 }
 
-export const initialState = { botsList: [...rawData], showList: false }
+export const initialState = { botsList: [...rawData], showList: false, orderBy: '', searchTerm: '' }
 type AppState = typeof initialState
 type Action = 
     | { type: 'favorite', shortName: string }
     | { type: 'unFavorite', shortName: string }
     | { type: 'showList' }
     | { type: 'showCards' }
+    | { type: 'orderByName' }
+    | { type: 'orderByCreated' }
+    | { type: 'searchFor', searchTermStr: string }
 
 function reducer(state: AppState, action: Action): AppState {
     switch(action.type){
@@ -48,6 +51,12 @@ function reducer(state: AppState, action: Action): AppState {
             return {...state, showList: true}
         case 'showCards':
             return {...state, showList: false}
+        case 'orderByName':
+            return {...state, orderBy: 'name'}
+        case 'orderByCreated':
+            return {...state, orderBy: 'created'}
+        case 'searchFor':
+            return {...state, searchTerm: action.searchTermStr}
         default:
             return state
     }

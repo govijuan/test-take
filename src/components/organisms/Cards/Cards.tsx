@@ -3,10 +3,8 @@ import CardsStyles, { CardsRow, CardsWrap, FavWrap, FavTitle  } from './Cards.st
 import BotCard from '../../molecules/BotCard/BotCard'
 import { Bot } from '../../../types/BotListTypes'
 
-const Cards = (props: any) => {
-    const { botsList } = props
-    const faveBotsList: Bot[] = botsList.filter( (item: Bot) => item.favorite === true)
-    const unfaveBotsList: Bot[] = botsList.filter( (item: Bot) => item.favorite === false )
+const Cards = (props: CardsTypes) => {
+    const { faveBotsList, unfaveBotsList } = props
     return (
         <CardsStyles>
             <CardsRow>
@@ -37,6 +35,11 @@ const Cards = (props: any) => {
         </CardsStyles>
             
     )
+}
+
+interface CardsTypes {
+    faveBotsList: Bot[],
+    unfaveBotsList: Bot[],
 }
 
 export default Cards
