@@ -24,7 +24,7 @@ const SortForm = (props: SortFormProps) => {
 
     return(
         <StyledForm onSubmit={ e => e.preventDefault() } >
-            <SearchInput onSearch={onSearch}/>
+            <SearchInput onChange={onSearch}/>
             <Button onClick={orderByNameClick}>Order by name</Button>
             <Button onClick={orderByCreatedClick}>Order by creation</Button>
             <BlocksButton />

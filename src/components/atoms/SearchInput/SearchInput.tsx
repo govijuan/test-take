@@ -2,9 +2,9 @@ import React from 'react';
 import StyledInput from './SearchInput.styles';
 
 const SearchInput = (props: any) =>{
-    const { onSearch } = props
+    const { onChange } = props
     return(
-        <StyledInput {...props} type='search' placeholder='Search' onChange={ e => onSearch(e) } />
+        <StyledInput {...props} type='search' placeholder='Search' onChange={ e => onChange(e) } />
     )
 }
 

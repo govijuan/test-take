@@ -14,5 +14,9 @@ const StyledInput = styled.input`
         outline: none;
         border-width: 2px;
     }
+    @media (max-width: 575px){
+        grid-column: 1 / 5;
+        width: 100%;
+    }
 `
 export default StyledInput

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import StyledMyChatbots, {ChatbotsHeader} from './MyChatbots.styles'
+import StyledMyChatbots, { ChatbotsHeader } from './MyChatbots.styles'
 import { DataContext } from '../../../data/dataContext'
 import { orderBotsListBy, filterBySearchTerm } from '../../../helpers/filterHelpers'
 import { Container } from 'react-bootstrap'
