@@ -1,4 +1,4 @@
-import React, {useContext,useEffect, MouseEvent} from 'react'
+import React, {useContext, MouseEvent, ChangeEvent} from 'react'
 import StyledForm from './SortForm.styles'
 import { DataContext } from '../../../data/dataContext'
 import SearchInput from '../../atoms/SearchInput/SearchInput'
@@ -9,23 +9,23 @@ import BlocksButton from '../../atoms/BlocksButton/BlocksButton'
 const SortForm = (props: SortFormProps) => {
     const {dispatch} = useContext(DataContext)
 
-    /* useEffect(() => {
-        dispatch({type: 'orderByCreated'})
-    },[]) */
-
     const orderByNameClick = (e: MouseEvent<HTMLButtonElement>) => {
-        console.log('clickou no order by name!!')
         dispatch({type: 'orderByName'})
     }
 
     const orderByCreatedClick = (e: MouseEvent<HTMLButtonElement>) => {
-        console.log('clickou no order by created!!')
         dispatch({type: 'orderByCreated'})
+    }
+
+    const onSearch = (e:ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value
+        console.log('OnChange acionado!!')
+        dispatch({type: 'searchFor', searchTermStr: value })
     }
 
     return(
         <StyledForm onSubmit={ e => e.preventDefault() } >
-            <SearchInput />
+            <SearchInput onSearch={onSearch}/>
             <Button onClick={orderByNameClick}>Order by name</Button>
             <Button onClick={orderByCreatedClick}>Order by creation</Button>
             <BlocksButton />

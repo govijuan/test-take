@@ -10,7 +10,7 @@ import List from '../../organisms/List/List'
 
 const MyChatbots = () => {
     const {state} = useContext(DataContext)
-    const { botsList, showList, orderBy } = state
+    const { botsList, showList, orderBy, searchTerm } = state
     const [botsLists, setBotsLists] = useState({
         faveBotsList: botsList.filter((item) => item.favorite === true), 
         unfaveBotsList: botsList.filter( (item) => item.favorite === false )
@@ -34,12 +34,16 @@ const MyChatbots = () => {
 
     useEffect(()=>{
         if(orderBy !== ''){
-            console.log('disparou o useEffect do orderBy!!')
-            console.log('orderBy value: ', orderBy);
             return setOrderedArrays()
         }
         
     }, [orderBy])
+
+    useEffect(() => {
+        if(searchTerm){
+            console.log('dispara o search')
+        }
+    }, [searchTerm])
 
     const botListComponent = showList ? <List faveBotsList={botsLists.faveBotsList}  unfaveBotsList={botsLists.unfaveBotsList} /> : <Cards  faveBotsList={botsLists.faveBotsList} unfaveBotsList={botsLists.unfaveBotsList} />
 
