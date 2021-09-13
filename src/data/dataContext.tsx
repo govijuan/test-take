@@ -31,6 +31,7 @@ type Action =
     | { type: 'showCards' }
     | { type: 'orderByName' }
     | { type: 'orderByCreated' }
+    | { type: 'cleanOrderBy' }
     | { type: 'searchFor', searchTermStr: string }
 
 function reducer(state: AppState, action: Action): AppState {
@@ -55,6 +56,8 @@ function reducer(state: AppState, action: Action): AppState {
             return {...state, orderBy: 'name'}
         case 'orderByCreated':
             return {...state, orderBy: 'created'}
+        case 'cleanOrderBy':
+            return {...state, orderBy: ''}
         case 'searchFor':
             return {...state, searchTerm: action.searchTermStr}
         default:

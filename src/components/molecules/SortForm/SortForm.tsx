@@ -9,9 +9,9 @@ import BlocksButton from '../../atoms/BlocksButton/BlocksButton'
 const SortForm = (props: SortFormProps) => {
     const {dispatch} = useContext(DataContext)
 
-    useEffect(() => {
+    /* useEffect(() => {
         dispatch({type: 'orderByCreated'})
-    },[])
+    },[]) */
 
     const orderByNameClick = (e: MouseEvent<HTMLButtonElement>) => {
         console.log('clickou no order by name!!')
